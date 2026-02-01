@@ -48,11 +48,8 @@ The application's parser (`csv-parser.ts` and `segment-logic.ts`) relies on **st
         - `Female 50+ In range` -> **BROKEN** (becomes `In_range` which fails matching)
     - **Tradeoff**: Changing the order or adding spaces in the status keyword will break the parser.
 
-### Requirement Ambiguity
-One of the main tradeoffs is that the requirements aren't fully defined yet.
-
-### Source of Truth Dilemma: CSV vs. User Input
-Contemplating whether to add manual input fields for **Metabolic Health Score** and **Creatinine** to allow for simulations, or to strictly follow the CSV as the single source of truth to ensure absolute data consistency. Currently, relying solely on the CSV ensures absolute data consistency and architectural simplicity but limits the user's ability to experiment with "what-if" scenarios. 
+### Strategic Decision: CSV as Single Source of Truth 
+I chose to strictly follow the CSV as the single source of truth to ensure absolute data consistency and architectural simplicity. While this prevents "what-if" simulations, it guarantees that the dashboard reflects verified clinical data without the risk of manual input errors.
 
 ## File Structure
 
